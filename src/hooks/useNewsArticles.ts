@@ -14,28 +14,39 @@ export function useNewsArticles() {
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    // Simulated API call
-    const mockArticles: NewsArticle[] = [
-      {
-        id: '1',
-        title: 'Global CO2 Levels Hit New Record',
-        summary: 'Scientists report unprecedented levels of atmospheric carbon dioxide...',
-        source: 'Climate Science Journal',
-        date: '2024-03-15'
-      },
-      {
-        id: '2',
-        title: 'New Green Energy Initiative Launched',
-        summary: 'Major countries announce collaborative effort to accelerate renewable energy adoption...',
-        source: 'Environmental News Network',
-        date: '2024-03-14'
-      }
-    ];
+    const fetchArticles = async () => {
+      setLoading(true);
+      setError(null); // Reset error state
 
-    setTimeout(() => {
-      setArticles(mockArticles);
-      setLoading(false);
-    }, 1000);
+      try {
+        const response = await fetch(
+          'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=2f125d1f13104036822b5b1e8a1f836d'
+        );
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch articles');
+        }
+
+        const data = await response.json();
+        
+        // Assuming the API returns articles in a property called 'articles'
+        const fetchedArticles: NewsArticle[] = data.articles.map((article: any) => ({
+          id: article.url, // Using the URL as a unique ID
+          title: article.title,
+          summary: article.description,
+          source: article.source.name,
+          date: article.publishedAt,
+        }));
+
+        setArticles(fetchedArticles);
+      } catch (err) {
+        setError(err as Error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
   }, []);
 
   return { articles, loading, error };

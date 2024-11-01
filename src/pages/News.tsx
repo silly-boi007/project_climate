@@ -22,8 +22,18 @@ export function News() {
             <p className="text-gray-600 dark:text-gray-300 mb-4">{article.summary}</p>
             <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400">
               <span>{article.source}</span>
-              <time>{article.date}</time>
+              <time dateTime={article.date} className="text-gray-500 dark:text-gray-400">
+                {new Date(article.date).toLocaleDateString()}
+              </time>
             </div>
+            <a
+              href={article.id} // Assuming the id is the article URL
+              target="_blank" // Opens the link in a new tab
+              rel="noopener noreferrer" // Security best practice
+              className="text-blue-500 hover:underline mt-4 block"
+            >
+              Read More
+            </a>
           </article>
         ))}
       </div>
