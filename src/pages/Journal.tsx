@@ -7,7 +7,7 @@ export function Journal() {
 
   return (
     <section>
-      <h2 className="text-3xl font-bold mb-8">Journal Entries</h2>
+      <h2 className="text-3xl font-bold mb-8">Articles</h2>
       <div className="grid gap-8 md:grid-cols-2">
         {posts.map(post => (
           <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">

@@ -20,7 +20,7 @@ export function useNewsArticles() {
 
       try {
         const response = await fetch(
-          'https://newsapi.org/v2/everything?domains=wsj.com&apiKey'
+          '#'
         );
 
         if (!response.ok) {

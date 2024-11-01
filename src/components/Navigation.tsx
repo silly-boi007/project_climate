@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Leaf, Mic, Users, Newspaper } from 'lucide-react';
 
 const navItems = [
-  { name: 'Journal', icon: Leaf, path: '/' },
+  { name: 'Articles', icon: Leaf, path: '/' },
   { name: 'Podcast', icon: Mic, path: '/podcast' },
   { name: 'News', icon: Newspaper, path: '/news' },
   { name: 'Stories', icon: Users, path: '/stories' },

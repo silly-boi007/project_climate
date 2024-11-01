@@ -4,6 +4,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        ubuntu: ['Ubuntu', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
+      },
       typography: {
         DEFAULT: {
           css: {

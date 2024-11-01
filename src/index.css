@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* index.css */
+article {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  article .absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  article:hover .absolute {
+    background-color: rgba(0, 0, 0, 0.4); /* Change this to your preferred color */
+  }
+  

@@ -3,19 +3,24 @@ import { Globe } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme'; // Adjust the path if necessary
 
 export function Header() {
-  const { theme } = useTheme(); // Assuming you have a way to get the current theme
+  const { theme } = useTheme();
 
   return (
-    <header className="py-8 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+    <header className="py-10 px-4 bg-gradient-to-r from-emerald-700 to-teal-600 text-white relative">
       <div className="max-w-screen-xl mx-auto">
+        <div className="absolute top-4 left-4 flex items-center space-x-2">
+          <Globe className="w-8 h-8" />
+          <span className="text-xl font-serif font-bold uppercase">VIVARTA</span>
+        </div>
         <div className="flex items-center justify-center mb-6">
-          <Globe className="w-12 h-12 mr-4" />
-          <h1 className={`py-16 text-4xl font-bold ${theme === 'dark' ? 'text-gray-200' : 'text-black'}`}>
-            Climate Insights
+          <h1
+            className={`py-16 text-6xl font-bold ${theme === 'dark' ? 'text-gray-200' : 'text-white'} font-playfair`}
+          >
+            PROJECT CLIMATE IITM
           </h1>
         </div>
-        <p className="text-center text-lg max-w-2xl mx-auto text-emerald-50">
-          Exploring climate change through journalism, storytelling, and community engagement
+        <p className="text-center text-lg max-w-2xl mx-auto text-emerald-50 font-light">
+          "Empowering a Sustainable Future, One step at a time"
         </p>
       </div>
     </header>
