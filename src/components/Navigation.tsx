@@ -11,7 +11,7 @@ const navItems = [
 
 export function Navigation() {
   return (
-    <nav className="fixed z-50 bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 md:top-0 md:bottom-auto md:border-b md:border-t-0">
+    <nav className="fixed z-50 bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-lg">
       <div className="max-w-screen-xl mx-auto px-4">
         <ul className="flex justify-around items-center h-16">
           {navItems.map((item) => (
