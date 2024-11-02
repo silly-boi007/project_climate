@@ -46,14 +46,14 @@ export function PodcastPlayer({ episode }: PodcastPlayerProps) {
         <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
           <button
             onClick={() => handleSkip(-15)}
-            className="flex items-center space-x-1 hover:text-emerald-600 dark:hover:text-emerald-400"
+            className="flex items-center space-x-1 hover:scale-105 transition duration-300 ease-in-out hover:text-emerald-600 dark:hover:text-emerald-400"
           >
             <SkipBack className="w-4 h-4" />
             <span>15s</span>
           </button>
           <button
             onClick={() => handleSkip(15)}
-            className="flex items-center space-x-1 hover:text-emerald-600 dark:hover:text-emerald-400"
+            className="flex items-center space-x-1 hover:scale-105 transition duration-300 ease-in-out hover:text-emerald-600 dark:hover:text-emerald-400"
           >
             <span>15s</span>
             <SkipForward className="w-4 h-4" />

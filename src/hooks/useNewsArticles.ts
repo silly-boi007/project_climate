@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 interface NewsArticle {
-  id: string;
+  id: string; // This will store the article URL for linking
   title: string;
   summary: string;
   source: string;
@@ -16,11 +16,11 @@ export function useNewsArticles() {
   useEffect(() => {
     const fetchArticles = async () => {
       setLoading(true);
-      setError(null); // Reset error state
+      setError(null);
 
       try {
         const response = await fetch(
-          '#'
+          'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=34f44cdd2cab4af3a6da73aa04f807b0'
         );
 
         if (!response.ok) {
@@ -28,10 +28,9 @@ export function useNewsArticles() {
         }
 
         const data = await response.json();
-        
-        // Assuming the API returns articles in a property called 'articles'
+
         const fetchedArticles: NewsArticle[] = data.articles.map((article: any) => ({
-          id: article.url, // Using the URL as a unique ID
+          id: article.url, // URL as the unique ID for linking
           title: article.title,
           summary: article.description,
           source: article.source.name,

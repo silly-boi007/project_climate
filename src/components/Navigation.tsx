@@ -11,7 +11,7 @@ const navItems = [
 
 export function Navigation() {
   return (
-    <nav className="fixed z-50 bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-lg">
+    <nav className="fixed z-50 bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800  rounded-lg shadow-lg">
       <div className="max-w-screen-xl mx-auto px-4">
         <ul className="flex justify-around items-center h-16">
           {navItems.map((item) => (
@@ -22,7 +22,7 @@ export function Navigation() {
                   `flex flex-col items-center text-sm ${
                     isActive
                       ? 'text-emerald-600 dark:text-emerald-400'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400'
+                      : 'text-gray-600 dark:text-gray-300 hover:scale-105 transition duration-300 ease-in-out hover:text-emerald-600 dark:hover:text-emerald-400'
                   } transition-colors`
                 }
               >
