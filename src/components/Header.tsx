@@ -33,7 +33,7 @@ export function Header() {
 
         <div className="flex items-center justify-center mb-6">
           <h1
-            className={`py-16 text-6xl font-bold hover:scale-105 transition duration-300 ease-in-out ${theme === 'dark' ? 'text-gray-200' : 'text-white'} font-playfair`}
+            className={`py-16 text-6xl font-bold  ${theme === 'dark' ? 'text-gray-200' : 'text-white'} font-playfair`}
           >
             PROJECT CLIMATE IITM
           </h1>
