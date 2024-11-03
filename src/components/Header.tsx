@@ -8,7 +8,7 @@ export function Header() {
   const { weather, loading, error } = useWeather();
 
   return (
-    <header className="py-10 px-4 bg-gradient-to-r from-emerald-700 to-teal-600 text-white relative">
+    <header className="py-10 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white relative">
       <div className="max-w-screen-xl mx-auto">
         <div className="absolute top-4 left-4 flex items-center space-x-2">
           <Globe className="w-8 h-8" />
